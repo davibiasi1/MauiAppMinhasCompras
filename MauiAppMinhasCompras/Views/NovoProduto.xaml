@@ -7,10 +7,13 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
-    
+
     <VerticalStackLayout Spacing="10" Padding="10">
         <Label Text="Descrição do Produto:" />
         <Entry x:Name="txt_descricao" />
+
+        <Label Text="Categoria:" />
+        <Entry x:Name="txt_categoria" Placeholder="Ex: Alimentos, Higiene, Limpeza" />
 
         <Label Text="Quantidade:" />
         <Entry x:Name="txt_quantidade" Keyboard="Numeric"/>

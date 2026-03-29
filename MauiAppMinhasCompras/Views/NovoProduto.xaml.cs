@@ -19,6 +19,12 @@ public partial class NovoProduto : ContentPage
                 return;
             }
 
+            if (string.IsNullOrWhiteSpace(txt_categoria.Text))
+            {
+                await DisplayAlert("Atenção", "Informe a categoria do produto.", "OK");
+                return;
+            }
+
             if (!double.TryParse(txt_quantidade.Text, out double quantidade))
             {
                 await DisplayAlert("Atenção", "Informe uma quantidade válida.", "OK");
@@ -34,6 +40,7 @@ public partial class NovoProduto : ContentPage
             Produto p = new Produto
             {
                 Descricao = txt_descricao.Text,
+                Categoria = txt_categoria.Text,
                 Quantidade = quantidade,
                 Preco = preco
             };

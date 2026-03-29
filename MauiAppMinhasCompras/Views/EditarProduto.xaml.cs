@@ -13,6 +13,7 @@ public partial class EditarProduto : ContentPage
         produtoAtual = produto;
 
         txt_descricao.Text = produtoAtual.Descricao;
+        txt_categoria.Text = produtoAtual.Categoria;
         txt_quantidade.Text = produtoAtual.Quantidade.ToString();
         txt_preco.Text = produtoAtual.Preco.ToString();
     }
@@ -24,6 +25,12 @@ public partial class EditarProduto : ContentPage
             if (string.IsNullOrWhiteSpace(txt_descricao.Text))
             {
                 await DisplayAlert("Atenção", "Informe a descrição do produto.", "OK");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txt_categoria.Text))
+            {
+                await DisplayAlert("Atenção", "Informe a categoria do produto.", "OK");
                 return;
             }
 
@@ -40,6 +47,7 @@ public partial class EditarProduto : ContentPage
             }
 
             produtoAtual.Descricao = txt_descricao.Text;
+            produtoAtual.Categoria = txt_categoria.Text;
             produtoAtual.Quantidade = quantidade;
             produtoAtual.Preco = preco;
 

@@ -13,6 +13,15 @@
         <Entry Placeholder="Pesquisar produto..."
                TextChanged="txt_search_TextChanged" />
 
+        <Label Text="Filtrar por categoria:" />
+        <Picker x:Name="picker_categoria"
+                Title="Selecione uma categoria"
+                SelectedIndexChanged="picker_categoria_SelectedIndexChanged" />
+
+        <Label x:Name="lbl_relatorio"
+               Text="Relatório por categoria:"
+               FontAttributes="Bold" />
+
         <ListView x:Name="lst_produtos"
                   ItemSelected="lst_produtos_ItemSelected"
                   HasUnevenRows="True">
